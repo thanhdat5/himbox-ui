@@ -1,0 +1,578 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>HimBOX - Network</title>
+    <link rel="icon" href="favicon.ico" />
+    <!-- Search Engine -->
+    <meta name="description" content="Connect to the world through HimBOX. The most secure cryptocurrency payment infrastructure." />
+    <meta name="image" content="https://oht-design.net/him/himbox.png" />
+    <!-- Schema.org for Google -->
+    <meta itemprop="name" content="HimBOX" />
+    <meta itemprop="description" content="Connect to the world through HimBOX. The most secure cryptocurrency payment infrastructure." />
+    <meta itemprop="image" content="https://oht-design.net/him/himbox.png" />
+    <!-- Open Graph general (Facebook, Pinterest & Google+) -->
+    <meta name="og:title" content="HimBOX" />
+    <meta name="og:description" content="Connect to the world through HimBOX. The most secure cryptocurrency payment infrastructure." />
+    <meta name="og:image" content="https://oht-design.net/him/himbox.png" />
+    <meta name="og:url" content="https://himbox.io" />
+    <meta name="og:site_name" content="HimBOX" />
+    <meta name="og:locale" content="en_US" />
+    <meta name="fb:app_id" content="401785937034606" />
+    <meta name="og:type" content="website" />
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous" />
+    <link rel="stylesheet" href="assets/fonts/AmpleSoftPro/stylesheet.css" />
+    <link rel="stylesheet" href="assets/css/style.css" />
+</head>
+
+<body>
+    <div class='hb-loader-wrapper' id="HBLoader">
+        <div class='hb-loader-element'></div>
+        <div class='hb-loader-element'></div>
+        <div class='hb-loader-element'></div>
+        <div class='hb-loader-text'>Loading…</div>
+        <div class='hb-loader-large-square'></div>
+    </div>
+    <!-- Begin header -->
+    <header class="hb-header">
+        <div class="hb-header-inner">
+            <div class="hb-header-heading">
+                <a href="dashboard.html" class="hb-logo">
+                    <img src="assets/images/logo.png" alt="HimBOX" />
+                    <span>HimBOX</span>
+                </a>
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item">
+                            <a href="dashboard.html">Home</a>
+                        </li>
+                        <li class="breadcrumb-item active" aria-current="page">Network</li>
+                    </ol>
+                </nav>
+            </div>
+            <div class="hb-header-menu">
+                <button type="button" class="btn btn-primary hb-header-btn hb-btn-deposit" data-bs-toggle="modal"
+                data-bs-target="#depositModal">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16px" height="16px" viewBox="0 0 16 16">
+                        <path fill="currentColor" fill-rule="evenodd"
+                            d="M14,9 C14.5523,9 15,9.44772 15,10 L15,13 C15,14.1046 14.1046,15 13,15 L3,15 C1.89543,15 1,14.1046 1,13 L1,10 C1,9.44772 1.44772,9 2,9 C2.55228,9 3,9.44771 3,10 L3,13 L13,13 L13,10 C13,9.44771 13.4477,9 14,9 Z M8,1 C8.55228,1 9,1.44772 9,2 L9,6.58579 L10.2929,5.29289 C10.6834,4.90237 11.3166,4.90237 11.7071,5.29289 C12.0976,5.68342 12.0976,6.31658 11.7071,6.70711 L8,10.4142 L4.29289,6.70711 C3.90237,6.31658 3.90237,5.68342 4.29289,5.29289 C4.68342,4.90237 5.31658,4.90237 5.70711,5.29289 L7,6.58579 L7,2 C7,1.44772 7.44772,1 8,1 Z" />
+                    </svg>
+                    <span>Deposit</span>
+                </button>
+                <button type="button" class="btn btn-primary hb-header-btn hb-btn-withdraw" data-bs-toggle="modal"
+                data-bs-target="#withdrawModal">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4" />
+                        <polyline points="17 8 12 3 7 8" />
+                        <line x1="12" y1="3" x2="12" y2="15" />
+                    </svg>
+                    <span>Withdraw</span>
+                </button>
+                <div class="hb-dropdown dropdown hb-notification me-md-4 me-2">
+                    <button class="hb-dropdown-toggle dropdown-toggle" type="button" id="notificationDropdown"
+                        data-bs-toggle="dropdown" aria-expanded="false">
+                        <svg width="24px" height="24px" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path fill="currentColor" fill-rule="evenodd"
+                                d="M12 1C8.318 1 5 3.565 5 7v4.539a3.25 3.25 0 01-.546 1.803l-2.2 3.299A1.518 1.518 0 003.519 19H8.5a3.5 3.5 0 107 0h4.982a1.518 1.518 0 001.263-2.36l-2.2-3.298A3.25 3.25 0 0119 11.539V7c0-3.435-3.319-6-7-6zM6.5 7c0-2.364 2.383-4.5 5.5-4.5s5.5 2.136 5.5 4.5v4.539c0 .938.278 1.854.798 2.635l2.199 3.299a.017.017 0 01.003.01l-.001.006-.004.006-.006.004-.007.001H3.518l-.007-.001-.006-.004-.004-.006-.001-.007.003-.01 2.2-3.298a4.75 4.75 0 00.797-2.635V7zM14 19h-4a2 2 0 104 0z" />
+                        </svg>
+                    </button>
+                    <div class="hb-dropdown-menu dropdown-menu dropdown-menu-end dropdown-menu-dark"
+                        aria-labelledby="notificationDropdown">
+                        <div class="hb-dropdown-menu-heading">Notification <span>(0)</span></div>
+                        <div class="hb-dropdown-menu-content">No Notification</div>
+                    </div>
+                </div>
+                <a class="hb-user-logged" href="profile.html">
+                    <div class="hb-user-avatar me-0">
+                        <img src="assets/images/avatar.png" alt="" />
+                    </div>
+                </a>
+                <button type="button" class="hb-btn-toggle-sidebar">
+                    <svg width="21" height="15" viewBox="0 0 21 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <rect width="21" height="3" rx="1.5" fill="white"></rect>
+                        <rect y="6" width="21" height="3" rx="1.5" fill="white"></rect>
+                        <rect y="12" width="21" height="3" rx="1.5" fill="white"></rect>
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </header>
+    <!-- End header -->
+
+    <!-- Begin main -->
+    <main>
+        <div class="hb-sidebar">
+            <div class="hb-sidebar-inner">
+                <div class="hb-sidebar-menu-wrap">
+                    <div class="pt-3 pb-5 text-end d-block d-md-none">
+                        <button type="button" class="hb-btn-toggle-sidebar">
+                            <svg width="17" height="17" viewBox="0 0 17 17" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="2.12134" y="0.0147247" width="21" height="3" rx="1.5" transform="rotate(45 2.12134 0.0147247)" fill="white"></rect><rect y="14.8492" width="21" height="3" rx="1.5" transform="rotate(-45 0 14.8492)" fill="white"></rect></svg>
+                        </button>
+                    </div>
+                    <ul class="hb-sidebar-menu">
+                        <li class="hb-sidebar-menu-item">
+                            <a href="dashboard.html" class="hb-sidebar-menu-link">
+                                <span class="hb-sidebar-menu-icon">
+                                    <svg width="15px" height="15px" viewBox="0 0 15 15" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path fill-rule="evenodd" clip-rule="evenodd"
+                                            d="M2.8 1L2.74967 0.99997C2.52122 0.999752 2.32429 0.999564 2.14983 1.04145C1.60136 1.17312 1.17312 1.60136 1.04145 2.14983C0.999564 2.32429 0.999752 2.52122 0.99997 2.74967L1 2.8V5.2L0.99997 5.25033C0.999752 5.47878 0.999564 5.67572 1.04145 5.85017C1.17312 6.39864 1.60136 6.82688 2.14983 6.95856C2.32429 7.00044 2.52122 7.00025 2.74967 7.00003L2.8 7H5.2L5.25033 7.00003C5.47878 7.00025 5.67572 7.00044 5.85017 6.95856C6.39864 6.82688 6.82688 6.39864 6.95856 5.85017C7.00044 5.67572 7.00025 5.47878 7.00003 5.25033L7 5.2V2.8L7.00003 2.74967C7.00025 2.52122 7.00044 2.32429 6.95856 2.14983C6.82688 1.60136 6.39864 1.17312 5.85017 1.04145C5.67572 0.999564 5.47878 0.999752 5.25033 0.99997L5.2 1H2.8ZM2.38328 2.01382C2.42632 2.00348 2.49222 2 2.8 2H5.2C5.50779 2 5.57369 2.00348 5.61672 2.01382C5.79955 2.05771 5.94229 2.20045 5.98619 2.38328C5.99652 2.42632 6 2.49222 6 2.8V5.2C6 5.50779 5.99652 5.57369 5.98619 5.61672C5.94229 5.79955 5.79955 5.94229 5.61672 5.98619C5.57369 5.99652 5.50779 6 5.2 6H2.8C2.49222 6 2.42632 5.99652 2.38328 5.98619C2.20045 5.94229 2.05771 5.79955 2.01382 5.61672C2.00348 5.57369 2 5.50779 2 5.2V2.8C2 2.49222 2.00348 2.42632 2.01382 2.38328C2.05771 2.20045 2.20045 2.05771 2.38328 2.01382ZM9.8 1L9.74967 0.99997C9.52122 0.999752 9.32429 0.999564 9.14983 1.04145C8.60136 1.17312 8.17312 1.60136 8.04145 2.14983C7.99956 2.32429 7.99975 2.52122 7.99997 2.74967L8 2.8V5.2L7.99997 5.25033C7.99975 5.47878 7.99956 5.67572 8.04145 5.85017C8.17312 6.39864 8.60136 6.82688 9.14983 6.95856C9.32429 7.00044 9.52122 7.00025 9.74967 7.00003L9.8 7H12.2L12.2503 7.00003C12.4788 7.00025 12.6757 7.00044 12.8502 6.95856C13.3986 6.82688 13.8269 6.39864 13.9586 5.85017C14.0004 5.67572 14.0003 5.47878 14 5.25033L14 5.2V2.8L14 2.74967C14.0003 2.52122 14.0004 2.32429 13.9586 2.14983C13.8269 1.60136 13.3986 1.17312 12.8502 1.04145C12.6757 0.999564 12.4788 0.999752 12.2503 0.99997L12.2 1H9.8ZM9.38328 2.01382C9.42632 2.00348 9.49222 2 9.8 2H12.2C12.5078 2 12.5737 2.00348 12.6167 2.01382C12.7995 2.05771 12.9423 2.20045 12.9862 2.38328C12.9965 2.42632 13 2.49222 13 2.8V5.2C13 5.50779 12.9965 5.57369 12.9862 5.61672C12.9423 5.79955 12.7995 5.94229 12.6167 5.98619C12.5737 5.99652 12.5078 6 12.2 6H9.8C9.49222 6 9.42632 5.99652 9.38328 5.98619C9.20045 5.94229 9.05771 5.79955 9.01382 5.61672C9.00348 5.57369 9 5.50779 9 5.2V2.8C9 2.49222 9.00348 2.42632 9.01382 2.38328C9.05771 2.20045 9.20045 2.05771 9.38328 2.01382ZM2.74967 7.99997L2.8 8H5.2L5.25033 7.99997C5.47878 7.99975 5.67572 7.99956 5.85017 8.04145C6.39864 8.17312 6.82688 8.60136 6.95856 9.14983C7.00044 9.32429 7.00025 9.52122 7.00003 9.74967L7 9.8V12.2L7.00003 12.2503C7.00025 12.4788 7.00044 12.6757 6.95856 12.8502C6.82688 13.3986 6.39864 13.8269 5.85017 13.9586C5.67572 14.0004 5.47878 14.0003 5.25033 14L5.2 14H2.8L2.74967 14C2.52122 14.0003 2.32429 14.0004 2.14983 13.9586C1.60136 13.8269 1.17312 13.3986 1.04145 12.8502C0.999564 12.6757 0.999752 12.4788 0.99997 12.2503L1 12.2V9.8L0.99997 9.74967C0.999752 9.52122 0.999564 9.32429 1.04145 9.14983C1.17312 8.60136 1.60136 8.17312 2.14983 8.04145C2.32429 7.99956 2.52122 7.99975 2.74967 7.99997ZM2.8 9C2.49222 9 2.42632 9.00348 2.38328 9.01382C2.20045 9.05771 2.05771 9.20045 2.01382 9.38328C2.00348 9.42632 2 9.49222 2 9.8V12.2C2 12.5078 2.00348 12.5737 2.01382 12.6167C2.05771 12.7995 2.20045 12.9423 2.38328 12.9862C2.42632 12.9965 2.49222 13 2.8 13H5.2C5.50779 13 5.57369 12.9965 5.61672 12.9862C5.79955 12.9423 5.94229 12.7995 5.98619 12.6167C5.99652 12.5737 6 12.5078 6 12.2V9.8C6 9.49222 5.99652 9.42632 5.98619 9.38328C5.94229 9.20045 5.79955 9.05771 5.61672 9.01382C5.57369 9.00348 5.50779 9 5.2 9H2.8ZM9.8 8L9.74967 7.99997C9.52122 7.99975 9.32429 7.99956 9.14983 8.04145C8.60136 8.17312 8.17312 8.60136 8.04145 9.14983C7.99956 9.32429 7.99975 9.52122 7.99997 9.74967L8 9.8V12.2L7.99997 12.2503C7.99975 12.4788 7.99956 12.6757 8.04145 12.8502C8.17312 13.3986 8.60136 13.8269 9.14983 13.9586C9.32429 14.0004 9.52122 14.0003 9.74967 14L9.8 14H12.2L12.2503 14C12.4788 14.0003 12.6757 14.0004 12.8502 13.9586C13.3986 13.8269 13.8269 13.3986 13.9586 12.8502C14.0004 12.6757 14.0003 12.4788 14 12.2503L14 12.2V9.8L14 9.74967C14.0003 9.52122 14.0004 9.32429 13.9586 9.14983C13.8269 8.60136 13.3986 8.17312 12.8502 8.04145C12.6757 7.99956 12.4788 7.99975 12.2503 7.99997L12.2 8H9.8ZM9.38328 9.01382C9.42632 9.00348 9.49222 9 9.8 9H12.2C12.5078 9 12.5737 9.00348 12.6167 9.01382C12.7995 9.05771 12.9423 9.20045 12.9862 9.38328C12.9965 9.42632 13 9.49222 13 9.8V12.2C13 12.5078 12.9965 12.5737 12.9862 12.6167C12.9423 12.7995 12.7995 12.9423 12.6167 12.9862C12.5737 12.9965 12.5078 13 12.2 13H9.8C9.49222 13 9.42632 12.9965 9.38328 12.9862C9.20045 12.9423 9.05771 12.7995 9.01382 12.6167C9.00348 12.5737 9 12.5078 9 12.2V9.8C9 9.49222 9.00348 9.42632 9.01382 9.38328C9.05771 9.20045 9.20045 9.05771 9.38328 9.01382Z"
+                                            fill="currentColor" />
+                                    </svg>
+                                </span>
+                                <span class="hb-sidebar-menu-text">Dashboard</span>
+                            </a>
+                        </li>
+                        <li class="hb-sidebar-menu-item">
+                            <a href="network.html" class="hb-sidebar-menu-link active">
+                                <span class="hb-sidebar-menu-icon">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                        stroke-linejoin="round">
+                                        <rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect>
+                                        <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path>
+                                    </svg>
+                                </span>
+                                <span class="hb-sidebar-menu-text">Network</span>
+                            </a>
+                        </li>
+                        <li class="hb-sidebar-menu-item">
+                            <a href="package.html" class="hb-sidebar-menu-link">
+                                <span class="hb-sidebar-menu-icon">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                        stroke-linejoin="round">
+                                        <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                                    </svg>
+                                </span>
+                                <span class="hb-sidebar-menu-text">Package</span>
+                            </a>
+                        </li>
+                        <li class="hb-sidebar-menu-item">
+                            <a href="profile.html" class="hb-sidebar-menu-link ">
+                                <span class="hb-sidebar-menu-icon">
+                                    <span class="hb-sidebar-menu-icon">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
+                                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                            stroke-linecap="round" stroke-linejoin="round">
+                                            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                                            <circle cx="12" cy="7" r="4"></circle>
+                                        </svg>
+                                    </span>
+                                </span>
+                                <span class="hb-sidebar-menu-text">Profile</span>
+                            </a>
+                        </li>
+
+                        <li class="hb-sidebar-menu-item">
+                            <a href="index.html" class="hb-sidebar-menu-link">
+                                <span class="hb-sidebar-menu-icon">
+                                    <svg width="24px" height="24px" viewBox="0 0 24 24" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M13 12H22M22 12L18.6667 8M22 12L18.6667 16" stroke="currentColor"
+                                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                                        <path
+                                            d="M14 7V5.1736C14 4.00352 12.9999 3.08334 11.8339 3.18051L3.83391 3.84717C2.79732 3.93356 2 4.80009 2 5.84027V18.1597C2 19.1999 2.79733 20.0664 3.83391 20.1528L11.8339 20.8195C12.9999 20.9167 14 19.9965 14 18.8264V17"
+                                            stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                            stroke-linejoin="round" />
+                                    </svg>
+                                </span>
+                                <span class="hb-sidebar-menu-text">Sign Out</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="hb-sidebar-footer">
+                    <div class="mb-3 text-center">
+                        <img src="assets/images/fimage.png" class="img-fluid" />
+                    </div>
+                    <div class="hb-sidebar-footer-line">
+                        <img class="icon-cent" src="https://centbox.io/static/media/cent-icon.6bdeee83.png" alt="Cent">
+                        <p>$0.1</p>
+                    </div>
+                    <div class="hb-sidebar-footer-line">
+                        <img class="icon-cent"
+                            src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACgAAAAoCAYAAACM/rhtAAAACXBIWXMAABYlAAAWJQFJUiTwAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAUISURBVHgBtZlLSGtHGMe/2GCvihq6EcFHFFERIT7whUpNcaEgIorizov4wIVcrzsVvRFBcCEm4qJu1OJGRNoK4kboTUF8VTG6KErVpGCV4vuqVbE6d76TkyGHJOfMifoLH+fLZGbOn3l+M9GAnxBCiujDQA2fadR0oiGX1ByibVGzajQaK7w1VJSO2idqF0Q9dmrj1PTw2ojChsjrMf5qQmlFH4h/LaaEnVodvATyuq3miyE5DRofwnCw/wLOCSDL/f09LC0twfb2NlxcXAhpOp0OkpKSoLi4GAIDA4EDGzUjnUiXvAI3wTkzfXJycgIjIyMwNTUliPQGfSFUVVVBW1sbREdHgwI4040edYCnOGzyNpABRZlMJri7uwMeUGhPTw/U19crZTXTvB8lZUEq7j19jMvVMDg4CMPDw5K00NBQMBqNoNfrISAgAA4PD4VuPzo6kuRrbm6Gjo4OQbAMH+nvZo9UKk4vziyfWCwWEhMTwywjI4NMT0+Tp6cnr/kXFhZIYWGhpIzZbCYKXIhzwEPghFypg4MDyYvKysrI2dmZ0svI8/Mz6erqkpTd2NhQKjbkrfVkqampYS8oKCggNzc3RA0tLS2sfEVFBU8RHXfr7e3tSVoAW1MtV1dXJDU1ldWxvLysVMSE2gJEjd+DDDMzM8wvLy+HuLg4UEtYWBg0Njay73R8KhX5IAgkzqhEL5dzfX2d+bR7wV8qKyu91ukD3P+LsAWLlHLu7u4y32AwSH7r7e2F2NhY6O/vByWioqJAq9UK/v7+PnCQhgINSrlub2+ZHxERIUkfGxsT/NHRUeAhODhYeNJJxpNdaEG9Uq7w8HDm08HO/NXVVeYnJCQADy5hISEhPNkNXAITExOZv7i4yHybzcb8vLw8pWrAbrcDXRcFPzk5GTjQoUCdUq709HTmu4+dra0t5qekpChVA/Pz88zPzc0FDnQBPLlqa2shMjJS2EPz8/NZ+srKCvcLcWhMTk4KPp2dUF1dDTzglMIYTLYVcZbShRUeHh7g3bt3QprD4WBhVlBQEMTHx8tVAZ2dnXB8fCz4rsCCg8sAUaAi2Houccja2hrzc3JyZMvSvRjm5ubY976+PuDEgQJt4Ac7OztCVyFpad5jWwy5SkpKWNci3d3dQLc64ORv7OLfqVWASrAFXXEdhvUYxJ6ensLj46PwxAlxfn4u/O7K197eDg0NDaACm0bc6j6rKYVLhZr9GNfRgYEBKC0tBZUYtXjipyIVJ4o7m5ubXPkw0q6rq4OmpibJYs+JA7VpxS8Wap94S7rvIC5oKAXZ2dmCKBSTmZnpc2xyYmUecd4ccNPa2iqJD2dnZ8kboJfIpQmKhwUXdFFm4iYmJsgbwA5uGvdWpA87KIzF6+troTtd4NbnCqGArjqPX+5BG/at0slNDgc4D/H4ZBE1iKf6XqXS7gs0CnWJ+//LHRynWeBE1wf//PAjkCcCfmJyiZMIFEXiedQiVxqvOFxkZWUx/+7nP4Fs/wvYjN9YD+G/3/4CP7BQDT+5J3gECzQD3ipYfdWAdy50OAjmPks1+nA6XpyfZw2BwJjvQCU28d3KEOes3vQ1gmmgQOjY80i/mvyDnLX8Sq6mbeSZflTwmXg7rHMI5Z7ZL8AML4FW8J4oXIn4CV5x8HUph0i8eXjNBQ97Rn2XqhBqJ+rBFjOpFeb3akqcURAaHlv1orn/DYGGsaaV2pa/f0N8BYYSgXCCNgyDAAAAAElFTkSuQmCC"
+                            alt="Polkadot">
+                        <p>$8.66</p>
+                    </div>
+                    <div class="text-center pt-2">
+                        <a href="#" class="btn btn-primary">
+                            <span>Learn more</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="hb-content">
+            <div class="hb-network">
+                <h1 class="hp-page-title mb-3">My Networks</h1>
+                <div class="hb-network-statistics">
+                    <div class="row pb-lg-1 mb-3 mb-lg-4">
+                        <div class="col-xl-2 col-lg-3 col-md-6 col-6 mb-xl-0 mb-md-4 mb-3">
+                            <div class="hb-statistic-card highlight">
+                                <div class="hb-statistic-card-label">Total Sales</div>
+                                <div class="hb-statistic-card-value">
+                                    <b>250</b>
+                                    <span>DOT</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xl-2 col-lg-3 col-md-6 col-6 mb-xl-0 mb-md-4 mb-3">
+                            <div class="hb-statistic-card ">
+                                <div class="hb-statistic-card-label">Total Members</div>
+                                <div class="hb-statistic-card-value">
+                                    <b>20</b>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xl-2 col-lg-3 col-md-6 col-6 mb-xl-0 mb-md-4 mb-3">
+                            <div class="hb-statistic-card ">
+                                <div class="hb-statistic-card-label">Total Investors</div>
+                                <div class="hb-statistic-card-value">
+                                    <b>4</b>
+                                    <span>Partners</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xl-2 col-lg-3 col-md-6 col-6 mb-xl-0 mb-md-4 mb-3">
+                            <div class="hb-statistic-card">
+                                <div class="hb-statistic-card-label">Ranking</div>
+                                <div class="hb-statistic-card-value">
+                                    <b>0</b>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xl-2 col-lg-3 col-md-6 col-6 mb-xl-0 mb-md-4 mb-3">
+                            <div class="hb-statistic-card">
+                                <div class="hb-statistic-card-label">Click</div>
+                                <div class="hb-statistic-card-value">
+                                    <b>5</b>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xl-2 col-lg-3 col-md-6 col-6 mb-xl-0 mb-md-4 mb-3">
+                            <div class="hb-statistic-card">
+                                <div class="hb-statistic-card-label">Registration</div>
+                                <div class="hb-statistic-card-value">
+                                    <b>2</b>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-xl-9 pe-xl-5 mb-4 mb-xl-0 order-xl-1 order-2">
+                        <div class="hb-network-sharing-heading mb-2">MEMBERS</div>
+                        <div class="hb-card py-3 hb-network-member-card d-flex flex-column">
+                            <div class="h-100 d-flex flex-column" style="flex:1">
+                                <div class="hb-network-levels-wrap mb-3 mb-md-4">
+                                    <div class="hb-network-levels">
+                                        <div class="hb-network-level">
+                                            <div class="hb-network-level-heading">
+                                                <span>Level 1</span>
+                                                <b>2</b>
+                                            </div>
+                                            <div class="hb-network-level-members">
+                                                <ul>
+                                                    <li class="active"><span>FhDmfntL</span><i>></i></li>
+                                                    <li><span>ouJd0vI9</span></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <div class="hb-network-level">
+                                            <div class="hb-network-level-heading">
+                                                <span>Level 2</span>
+                                                <b>3</b>
+                                            </div>
+                                            <div class="hb-network-level-members">
+                                                <ul>
+                                                    <li class="active"><span>QCscHzjO</span><i>></i></li>
+                                                    <li><span>Fozl9RRu</span><i>></i></li>
+                                                    <li><span>GjybZkv1</span></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <div class="hb-network-level">
+                                            <div class="hb-network-level-heading">
+                                                <span>Level 3</span>
+                                                <b>1</b>
+                                            </div>
+                                            <div class="hb-network-level-members">
+                                                <ul>
+                                                    <li class="active"><span>GVyav7XQ</span><i>></i></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <div class="hb-network-level">
+                                            <div class="hb-network-level-heading">
+                                                <span>Level 4</span>
+                                                <b>4</b>
+                                            </div>
+                                            <div class="hb-network-level-members">
+                                                <ul>
+                                                    <li><span>ctcFcz0W</span></li>
+                                                    <li><span>FahOg7Is</span></li>
+                                                    <li class="active"><span>jSVYIm7F</span><i>></i></li>
+                                                    <li><span>ctcFcz0W</span></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <div class="hb-network-level">
+                                            <div class="hb-network-level-heading">
+                                                <span>Level 5</span>
+                                                <b>2</b>
+                                            </div>
+                                            <div class="hb-network-level-members">
+                                                <ul>
+                                                    <li class="active"><span>tTGiKyh1</span><i>></i></li>
+                                                    <li><span>B2Yh0Jn7</span></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <div class="hb-network-level">
+                                            <div class="hb-network-level-heading">
+                                                <span>Level 6</span>
+                                                <b>1</b>
+                                            </div>
+                                            <div class="hb-network-level-members">
+                                                <ul>
+                                                    <li><span>ixwvW0ev</span><i>></i></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="hb-network-members-list">
+                                    <div class="table-responsive">
+                                        <table class="table mb-0">
+                                            <thead>
+                                                <tr>
+                                                    <th>ID</th>
+                                                    <th>ID Sponsor</th>
+                                                    <th>Package</th>
+                                                    <th>HIM (Lock)</th>
+                                                    <th class="text-end">Rank</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td>ixwvW0ev</td>
+                                                    <td>tTGiKyh1</td>
+                                                    <td>3</td>
+                                                    <td>1000</td>
+                                                    <td class="text-end">0</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-3 order-xl-2 order-1 mb-xl-0 mb-3 mb-md-4">
+                        <div class="hb-network-sharing">
+                            <div class="row">
+                                <div class="col-xl-12 col-lg-6 mb-3 mb-md-4">
+                                    <div class="hb-network-sharing-heading">Affiliate</div>
+                                    <div class="hb-network-sharing-card">
+                                        <p>Share your affiliate link to invite more partners to join Centbox and gain
+                                            more
+                                            profits. Follow to see how your network gets bigger!</p>
+                                        <div class="hb-network-sharing-url">
+                                            <input type="text" value="https://himbox.io/sign-up?ref=a1v0S1KH"
+                                                readonly />
+                                            <button type="button">
+                                                <svg width="24px" height="24px" viewBox="0 0 24 24"
+                                                    id="magicoon-Regular" xmlns="http://www.w3.org/2000/svg">
+                                                    <g id="copy-Regular">
+                                                        <path id="copy-Regular-2" data-name="copy-Regular"
+                                                            fill="currentColor"
+                                                            d="M21.237,6.177,17.823,2.763a1.736,1.736,0,0,0-1.237-.513H11A3.754,3.754,0,0,0,7.25,6v.25H6A3.754,3.754,0,0,0,2.25,10v8A3.754,3.754,0,0,0,6,21.75h7A3.754,3.754,0,0,0,16.75,18v-.25H18A3.754,3.754,0,0,0,21.75,14V7.414A1.736,1.736,0,0,0,21.237,6.177ZM17.75,4.811,19.189,6.25h-.377A1.064,1.064,0,0,1,17.75,5.188ZM15.25,18A2.252,2.252,0,0,1,13,20.25H6A2.252,2.252,0,0,1,3.75,18V10A2.252,2.252,0,0,1,6,7.75H7.25V14A3.754,3.754,0,0,0,11,17.75h4.25ZM18,16.25H11A2.252,2.252,0,0,1,8.75,14V6A2.252,2.252,0,0,1,11,3.75h5.25V5.188A2.565,2.565,0,0,0,18.812,7.75H20.25V14A2.252,2.252,0,0,1,18,16.25Z" />
+                                                    </g>
+                                                </svg>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-xl-12 col-lg-6">
+                                    <div class="hb-network-sharing-heading">Sharing</div>
+                                    <div class="hb-network-sharing-card">
+                                        <div class="btn-group" role="group"
+                                            aria-label="Basic radio toggle button group">
+                                            <input type="radio" class="btn-check" name="btnradio" id="btnradio1"
+                                                autocomplete="off" checked>
+                                            <label class="btn btn-outline-primary" for="btnradio1">
+                                                <?xml version="1.0" encoding="iso-8859-1"?>
+                                                <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg"
+                                                    xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                                                    viewBox="0 0 310 310" xml:space="preserve">
+                                                    <g id="XMLID_826_">
+                                                        <path fill="currentColor" id="XMLID_827_" d="M302.973,57.388c-4.87,2.16-9.877,3.983-14.993,5.463c6.057-6.85,10.675-14.91,13.494-23.73
+		c0.632-1.977-0.023-4.141-1.648-5.434c-1.623-1.294-3.878-1.449-5.665-0.39c-10.865,6.444-22.587,11.075-34.878,13.783
+		c-12.381-12.098-29.197-18.983-46.581-18.983c-36.695,0-66.549,29.853-66.549,66.547c0,2.89,0.183,5.764,0.545,8.598
+		C101.163,99.244,58.83,76.863,29.76,41.204c-1.036-1.271-2.632-1.956-4.266-1.825c-1.635,0.128-3.104,1.05-3.93,2.467
+		c-5.896,10.117-9.013,21.688-9.013,33.461c0,16.035,5.725,31.249,15.838,43.137c-3.075-1.065-6.059-2.396-8.907-3.977
+		c-1.529-0.851-3.395-0.838-4.914,0.033c-1.52,0.871-2.473,2.473-2.513,4.224c-0.007,0.295-0.007,0.59-0.007,0.889
+		c0,23.935,12.882,45.484,32.577,57.229c-1.692-0.169-3.383-0.414-5.063-0.735c-1.732-0.331-3.513,0.276-4.681,1.597
+		c-1.17,1.32-1.557,3.16-1.018,4.84c7.29,22.76,26.059,39.501,48.749,44.605c-18.819,11.787-40.34,17.961-62.932,17.961
+		c-4.714,0-9.455-0.277-14.095-0.826c-2.305-0.274-4.509,1.087-5.294,3.279c-0.785,2.193,0.047,4.638,2.008,5.895
+		c29.023,18.609,62.582,28.445,97.047,28.445c67.754,0,110.139-31.95,133.764-58.753c29.46-33.421,46.356-77.658,46.356-121.367
+		c0-1.826-0.028-3.67-0.084-5.508c11.623-8.757,21.63-19.355,29.773-31.536c1.237-1.85,1.103-4.295-0.33-5.998
+		C307.394,57.037,305.009,56.486,302.973,57.388z" />
+                                                    </g>
+                                                </svg>
+                                                <span>Twitter</span>
+                                            </label>
+
+                                            <input type="radio" class="btn-check" name="btnradio" id="btnradio2"
+                                                autocomplete="off">
+                                            <label class="btn btn-outline-primary" for="btnradio2">
+                                                <svg width="24px" height="24px" viewBox="0 0 24 24"
+                                                    xmlns="http://www.w3.org/2000/svg">
+                                                    <path fill="currentColor"
+                                                        d="m20.665 3.717-17.73 6.837c-1.21.486-1.203 1.161-.222 1.462l4.552 1.42 10.532-6.645c.498-.303.953-.14.579.192l-8.533 7.701h-.002l.002.001-.314 4.692c.46 0 .663-.211.921-.46l2.211-2.15 4.599 3.397c.848.467 1.457.227 1.668-.785l3.019-14.228c.309-1.239-.473-1.8-1.282-1.434z" />
+                                                </svg>
+                                                <span>Telegram</span>
+                                            </label>
+                                        </div>
+                                        <div class="hb-network-sharing-url">
+                                            HimBOX is an opportunity to earn more money! HimBOX is an opportunity to
+                                            make your
+                                            dreams come true! HimBOX is a family! Join in and start action!<br />
+                                            https://himbox.io/sign-up?ref=$a1v0S1KH
+                                        </div>
+                                        <div class="hb-network-sharing-action">
+                                            <button type="button" class="hb-network-sharing-btn">
+                                                <span>Share</span>
+                                            </button>
+                                            <button type="button" class="hb-network-sharing-btn outline">
+                                                <span>Copy</span>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <!-- End main -->
+
+    <!-- Modal Withdraw -->
+    <div class="hb-modal modal fade" id="withdrawModal" tabindex="-1" aria-labelledby="withdrawModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="withdrawModalLabel">Withdraw</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="form-note">
+                        <ol>
+                            <li>Setting up an automatic withdrawal schedule helps you save transaction fees and keep
+                                your
+                                accounts safe.</li>
+                            <li>Daily profit will be sent to your wallet address at 8:00 UTC every day.</li>
+                            <li>The system will return profits to your e-wallet if the balance in the account reaches
+                                the
+                                minimum amount set.</li>
+                            <li>The recipient's wallet address must have at least 1 DOT</li>
+                        </ol>
+                    </div>
+
+                    <div class="form-group mb-3">
+                        <label class="form-label">Minimum amount</label>
+                        <div class="hb-form-control-wrap">
+                            <input type="number" class="form-control" value="0.025" />
+                            <span>DOT</span>
+                        </div>
+                    </div>
+
+                    <div class="form-group mb-3">
+                        <label class="form-label">Recipient wallet address</label>
+                        <input type="text" class="form-control" value="0x" />
+                    </div>
+
+                    <div class="form-group mb-4">
+                        <label class="form-label">Verified password</label>
+                        <div class="hb-form-control-wrap">
+                            <input autocomplete="off" type="password" class="form-control" />
+                            <span style="cursor: pointer;">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg>
+                            </span>
+                        </div>
+                    </div>
+
+                    <div>
+                        <button type="button" class="btn btn-primary">
+                            <span>Save changes</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Modal Deposit -->
+    <div class="hb-modal modal fade" id="depositModal" tabindex="-1" aria-labelledby="depositModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog modal-sm modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="depositModalLabel">Deposit</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="form-group mb-3">
+                        <label class="form-label">Deposit amount</label>
+                        <div class="hb-form-control-wrap">
+                            <input type="number" class="form-control" value="0.025" />
+                            <span>DOT</span>
+                        </div>
+                    </div>
+
+                    <div class="form-group mb-3">
+                        <label class="form-label">Referral ID (Optional)</label>
+                        <input type="text" class="form-control" value="0x" />
+                    </div>
+
+                    <div class="form-group mb-4">
+                        <label class="form-label">Verified password</label>
+                        <div class="hb-form-control-wrap">
+                            <input autocomplete="off" type="password" class="form-control" />
+                            <span style="cursor: pointer;">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg>
+                            </span>
+                        </div>
+                    </div>
+
+                    <div>
+                        <button type="button" class="btn btn-primary">
+                            <span>Confirm</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+    <script src="assets/plugins/jQuery/jquery.min.js"></script>
+    <script src="assets/js/main.js"></script>
+</body>
+
+</html>

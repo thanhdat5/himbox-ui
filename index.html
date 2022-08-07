@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>HimBOX - Login</title>
+    <link rel="icon" href="favicon.ico" />
+    <!-- Search Engine -->
+    <meta name="description" content="Connect to the world through HimBOX. The most secure cryptocurrency payment infrastructure." />
+    <meta name="image" content="https://oht-design.net/him/himbox.png" />
+    <!-- Schema.org for Google -->
+    <meta itemprop="name" content="HimBOX" />
+    <meta itemprop="description" content="Connect to the world through HimBOX. The most secure cryptocurrency payment infrastructure." />
+    <meta itemprop="image" content="https://oht-design.net/him/himbox.png" />
+    <!-- Open Graph general (Facebook, Pinterest & Google+) -->
+    <meta name="og:title" content="HimBOX" />
+    <meta name="og:description" content="Connect to the world through HimBOX. The most secure cryptocurrency payment infrastructure." />
+    <meta name="og:image" content="https://oht-design.net/him/himbox.png" />
+    <meta name="og:url" content="https://himbox.io" />
+    <meta name="og:site_name" content="HimBOX" />
+    <meta name="og:locale" content="en_US" />
+    <meta name="fb:app_id" content="401785937034606" />
+    <meta name="og:type" content="website" />
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous" />
+    <link rel="stylesheet" href="assets/fonts/AmpleSoftPro/stylesheet.css" />
+    <link rel="stylesheet" href="assets/css/style.css" />
+</head>
+
+<body>
+    <div class='hb-loader-wrapper' id="HBLoader">
+        <div class='hb-loader-element'></div>
+        <div class='hb-loader-element'></div>
+        <div class='hb-loader-element'></div>
+        <div class='hb-loader-text'>Loading…</div>
+        <div class='hb-loader-large-square'></div>
+    </div>
+
+    <div class="hb-auth-page">
+        <div class="container">
+            <div class="hb-auth-form">
+                <div class="hb-auth-form-logo">
+                    <img src="assets/images/logo.png" height="60" alt="HimBOX" />
+                </div>
+                <div class="hb-auth-form-title">Login</div>
+                <div class="form-group mb-3">
+                    <label class="form-label">Your email address</label>
+                    <input autocomplete="off" type="email" class="form-control" />
+                </div>
+                <div class="form-group mb-3">
+                    <label class="form-label">Your password</label>
+                    <div class="hb-form-control-wrap">
+                        <input autocomplete="off" type="password" class="form-control" />
+                        <span style="cursor: pointer;">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg>
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="row mb-4">
+                    <div class="col">
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="" id="chkAgree" checked>
+                            <label class="form-check-label" for="chkAgree">Remember me</label>
+                        </div>
+                    </div>
+                    <div class="col text-end">
+                        <a class="hb-auth-form-link" href="forgot-password.html">Forgot password?</a>
+                    </div>
+                </div>
+                <div class="hb-auth-form-action">
+                    <a href="dashboard.html" type="button" class="btn btn-primary w-100">
+                        <span>Login</span>
+                    </a>
+                </div>
+                <div class="hb-auth-form-note">
+                    Don't have an account? <a class="hb-auth-form-link" href="sign-up.html">Sign Up</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+    <script src="assets/plugins/jQuery/jquery.min.js"></script>
+    <script src="assets/js/main.js"></script>
+</body>
+
+</html>
